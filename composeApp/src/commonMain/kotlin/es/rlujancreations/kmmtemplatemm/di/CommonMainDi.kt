@@ -1,5 +1,6 @@
 package es.rlujancreations.kmmtemplatemm.di
 
+import es.rlujancreations.core.data.di.coreDataModule
 import es.rlujancreations.database.di.coreDatabaseModule
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
@@ -16,6 +17,7 @@ fun initKoin(config: KoinAppDeclaration? = null) {
         config?.invoke(this)
         modules(
             coreDatabaseModule,
+            coreDataModule,
             *commonNativeModules.toTypedArray(),
         )
     }
