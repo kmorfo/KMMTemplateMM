@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.kmmtemplatemm.multiplatform.feature.ui)
+    alias(libs.plugins.kmmtemplatemm.multiplatform.library.compose)
 }
 
 kotlin {

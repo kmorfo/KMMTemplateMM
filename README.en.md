@@ -67,7 +67,7 @@ Modularization is a key approach to building scalable and maintainable software.
 1.  Clone this repository:
 
     ```bash
-    git clone <REPOSITORY_URL>
+    git clone https://github.com/kmorfo/KMMTemplateMM
 
     ```
 

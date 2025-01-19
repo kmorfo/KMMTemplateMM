@@ -102,7 +102,7 @@ proyecto está organizado en módulos que ofrecen los siguientes beneficios:
 1. Clona este repositorio:
 
    ```
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/kmorfo/KMMTemplateMM
    ```
 
 2. Sincroniza el proyecto con Gradle para descargar las dependencias.
