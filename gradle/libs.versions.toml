@@ -84,6 +84,7 @@ jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrains
 gradleBuildConfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildconfig" }
 
 kmmtemplatemm-multiplatform-application = { id = "kmmtemplatemm.multiplatform.application", version = "unspecified" }
+kmmtemplatemm-multiplatform-application-compose = { id = "kmmtemplatemm.multiplatform.application.compose", version = "unspecified" }
 
 [bundles]
 compose = [
