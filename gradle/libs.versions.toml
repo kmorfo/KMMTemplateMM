@@ -36,6 +36,8 @@ serialization = "1.7.3"
 test-runner = "1.6.2"
 test-core = "1.6.1"
 
+ktlint = "12.1.1"
+
 # Project versions
 projectApplicationId = "es.rlujancreations.mmkmptemplate"
 projectVersionName = "1.0.0"
@@ -43,7 +45,6 @@ projectMinSdkVersion = "25"
 projectTargetSdkVersion = "35"
 projectCompileSdkVersion = "35"
 projectVersionCode = "1"
-
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -130,6 +131,7 @@ gradleBuildConfig = { id = "com.github.gmazzo.buildconfig", version.ref = "build
 
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 androidxRoom = { id = "androidx.room", version.ref = "room" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 
 kmmtemplatemm-multiplatform-application = { id = "kmmtemplatemm.multiplatform.application", version = "unspecified" }
 kmmtemplatemm-multiplatform-application-compose = { id = "kmmtemplatemm.multiplatform.application.compose", version = "unspecified" }

@@ -5,12 +5,10 @@ plugins {
 kotlin {
 
     sourceSets {
-        
-        androidMain.dependencies {
 
+        androidMain.dependencies {
         }
         commonMain.dependencies {
-
         }
     }
 }
@@ -18,4 +16,3 @@ kotlin {
 android {
     namespace = "es.rlujancreations.kmmtemplatemm"
 }
-

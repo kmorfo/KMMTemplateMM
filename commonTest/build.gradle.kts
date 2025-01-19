@@ -8,7 +8,7 @@ plugins {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            //Import modules to test
+            // Import modules to test
             implementation(projects.core.database)
 
             implementation(libs.kotlinx.datetime)
@@ -16,7 +16,6 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
 
             implementation(libs.kotlinx.coroutines.core)
-
         }
         commonTest.dependencies {
             implementation(projects.commonTest)

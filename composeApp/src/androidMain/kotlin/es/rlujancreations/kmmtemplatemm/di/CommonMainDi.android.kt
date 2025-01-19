@@ -7,5 +7,5 @@ import org.koin.core.module.Module
  */
 actual val commonNativeModules: List<Module> =
     listOf(
-        //Register here your Android native modules
+        // Register here your Android native modules
     )
