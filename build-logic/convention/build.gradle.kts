@@ -15,5 +15,9 @@ dependencies {
 gradlePlugin {
     plugins {
         //Here we will register the plugins
+        register("multiplatformApplication") {
+            id = "kmmtemplatemm.multiplatform.application"
+            implementationClass = "KmpApplicationConventionPlugin"
+        }
     }
 }
