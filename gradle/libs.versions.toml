@@ -85,6 +85,8 @@ gradleBuildConfig = { id = "com.github.gmazzo.buildconfig", version.ref = "build
 
 kmmtemplatemm-multiplatform-application = { id = "kmmtemplatemm.multiplatform.application", version = "unspecified" }
 kmmtemplatemm-multiplatform-application-compose = { id = "kmmtemplatemm.multiplatform.application.compose", version = "unspecified" }
+kmmtemplatemm-multiplatform-library = { id = "kmmtemplatemm.multiplatform.library", version = "unspecified" }
+
 
 [bundles]
 compose = [

@@ -22,5 +22,9 @@ gradlePlugin {
             id = "kmmtemplatemm.multiplatform.application.compose"
             implementationClass = "KmpApplicationComposeConventionPlugin"
         }
+        register("multiplatformLibraryCompose") {
+            id = "kmmtemplatemm.multiplatform.library"
+            implementationClass = "KmpLibraryConventionPlugin"
+        }
     }
 }
