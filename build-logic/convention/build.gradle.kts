@@ -34,5 +34,9 @@ gradlePlugin {
             id = "kmmtemplatemm.multiplatform.feature.ui"
             implementationClass = "KmpFeatureUiConventionPlugin"
         }
+        register("kmpRoom") {
+            id = "kmmtemplatemm.multiplatform.room"
+            implementationClass = "KmpRoomConventionPlugin"
+        }
     }
 }

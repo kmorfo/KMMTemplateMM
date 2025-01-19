@@ -26,6 +26,14 @@ buildconfig = "5.3.5"
 desugar_jdk_libs = "2.1.4"
 koin = "4.0.0"
 
+ktor = "3.0.0"
+ktorClientLogging = "3.0.0"
+ktorServerCallLogging = "3.0.0"
+
+kotlinxDatetime = "0.6.1"
+moko-permissions = "0.18.0"
+
+
 # Project versions
 projectApplicationId = "es.rlujancreations.mmkmptemplate"
 projectVersionName = "1.0.0"
@@ -58,13 +66,36 @@ compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose-mu
 compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose-multiplatform" }
 
 desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
+moko-permissions = { group = "dev.icerock.moko", name = "permissions", version.ref = "moko-permissions" }
+moko-permissions-compose = { group = "dev.icerock.moko", name = "permissions-compose", version.ref = "moko-permissions" }
 
+#Koin
 koin-bom = { group = "io.insert-koin", name = "koin-bom", version.ref = "koin" }
 koin-android = { group = "io.insert-koin", name = "koin-android" }
 koin-core = { group = "io.insert-koin", name = "koin-core" }
 koin-compose = { group = "io.insert-koin", name = "koin-compose" }
 koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel", version.ref = "koin" }
 koin-test = { group = "io.insert-koin", name = "koin-test" }
+
+#Date
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
+
+#ktor
+ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktorClientLogging" }
+ktor-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+#room
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-sqlite-bundled = { group = "androidx.sqlite", name = "sqlite-bundled", version.ref = "androidx-sqliteBundled" }
+
 
 # Gradle
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
@@ -88,6 +119,7 @@ kmmtemplatemm-multiplatform-application-compose = { id = "kmmtemplatemm.multipla
 kmmtemplatemm-multiplatform-library = { id = "kmmtemplatemm.multiplatform.library", version = "unspecified" }
 kmmtemplatemm-multiplatform-library-compose = { id = "kmmtemplatemm.multiplatform.library.compose", version = "unspecified" }
 kmmtemplatemm-multiplatform-feature-ui = { id = "kmmtemplatemm.multiplatform.feature.ui", version = "unspecified" }
+kmmtemplatemm-multiplatform-room = { id = "kmmtemplatemm.multiplatform.room", version = "unspecified" }
 
 
 [bundles]
