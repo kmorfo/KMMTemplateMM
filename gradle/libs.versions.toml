@@ -87,6 +87,7 @@ kmmtemplatemm-multiplatform-application = { id = "kmmtemplatemm.multiplatform.ap
 kmmtemplatemm-multiplatform-application-compose = { id = "kmmtemplatemm.multiplatform.application.compose", version = "unspecified" }
 kmmtemplatemm-multiplatform-library = { id = "kmmtemplatemm.multiplatform.library", version = "unspecified" }
 kmmtemplatemm-multiplatform-library-compose = { id = "kmmtemplatemm.multiplatform.library.compose", version = "unspecified" }
+kmmtemplatemm-multiplatform-feature-ui = { id = "kmmtemplatemm.multiplatform.feature.ui", version = "unspecified" }
 
 
 [bundles]

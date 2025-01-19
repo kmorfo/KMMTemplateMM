@@ -22,13 +22,17 @@ gradlePlugin {
             id = "kmmtemplatemm.multiplatform.application.compose"
             implementationClass = "KmpApplicationComposeConventionPlugin"
         }
-        register("multiplatformLibraryCompose") {
+        register("multiplatformLibrary") {
             id = "kmmtemplatemm.multiplatform.library"
             implementationClass = "KmpLibraryConventionPlugin"
         }
         register("multiplatformLibraryCompose") {
             id = "kmmtemplatemm.multiplatform.library.compose"
             implementationClass = "KmpLibraryComposeConventionPlugin"
+        }
+        register("multiplatformFeatureUi") {
+            id = "kmmtemplatemm.multiplatform.feature.ui"
+            implementationClass = "KmpFeatureUiConventionPlugin"
         }
     }
 }
