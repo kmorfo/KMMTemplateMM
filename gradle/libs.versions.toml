@@ -121,6 +121,7 @@ kmmtemplatemm-multiplatform-library-compose = { id = "kmmtemplatemm.multiplatfor
 kmmtemplatemm-multiplatform-feature-ui = { id = "kmmtemplatemm.multiplatform.feature.ui", version = "unspecified" }
 kmmtemplatemm-multiplatform-room = { id = "kmmtemplatemm.multiplatform.room", version = "unspecified" }
 kmmtemplatemm-multiplatform-koin = { id = "kmmtemplatemm.multiplatform.koin", version = "unspecified" }
+kmmtemplatemm-multiplatform-ktor = { id = "kmmtemplatemm.multiplatform.ktor", version = "unspecified" }
 
 
 [bundles]
