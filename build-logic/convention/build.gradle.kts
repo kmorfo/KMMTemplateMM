@@ -46,5 +46,9 @@ gradlePlugin {
             id = "kmmtemplatemm.multiplatform.ktor"
             implementationClass = "KmpKtorConventionPlugin"
         }
+        register("KmpKotlinTest") {
+            id = "kmmtemplatemm.multiplatform.kotlin.test"
+            implementationClass = "KmpKotlinTestConventionPlugin"
+        }
     }
 }
