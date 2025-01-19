@@ -11,7 +11,7 @@ class KmpLibraryComposeConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         target.run {
             pluginManager.run {
-                pluginManager.apply("registrohorariopro.multiplatform.library")
+                pluginManager.apply("kmmtemplatemm.multiplatform.library")
                 pluginManager.apply("org.jetbrains.compose")
                 pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
             }

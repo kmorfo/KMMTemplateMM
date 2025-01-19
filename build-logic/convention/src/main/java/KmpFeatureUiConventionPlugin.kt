@@ -15,8 +15,7 @@ class KmpFeatureUiConventionPlugin : Plugin<Project> {
 
             kotlinExtension.sourceSets.getByName("commonMain") {
                 dependencies {
-//                    implementation(project(":core:presentation:ui"))
-//                    implementation(project(":core:presentation:designsystem"))
+                    implementation(project(":core:presentation"))
                 }
             }
         }
