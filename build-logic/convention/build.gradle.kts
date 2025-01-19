@@ -38,5 +38,9 @@ gradlePlugin {
             id = "kmmtemplatemm.multiplatform.room"
             implementationClass = "KmpRoomConventionPlugin"
         }
+        register("KmpKoin") {
+            id = "kmmtemplatemm.multiplatform.koin"
+            implementationClass = "KmpKoinConventionPlugin"
+        }
     }
 }
