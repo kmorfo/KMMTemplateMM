@@ -1,8 +1,5 @@
 [versions]
-agp = "8.6.0"
-android-compileSdk = "34"
-android-minSdk = "24"
-android-targetSdk = "34"
+agp = "8.6.1"
 androidx-activityCompose = "1.10.0"
 androidx-appcompat = "1.7.0"
 androidx-constraintlayout = "2.2.0"
@@ -15,7 +12,7 @@ compose-multiplatform = "1.7.3"
 junit = "4.13.2"
 kotlin = "2.1.0"
 jetbrainsKotlinJvm = "2.0.0"
-coroutines = "1.9.0"
+coroutines = "1.10.1"
 
 androidTools = "31.8.0"
 ksp = "2.1.0-1.0.29"
@@ -33,6 +30,7 @@ ktorServerCallLogging = "3.0.0"
 
 kotlinxDatetime = "0.6.1"
 moko-permissions = "0.18.0"
+serialization = "1.7.3"
 
 #Test
 test-runner = "1.6.2"
@@ -79,6 +77,8 @@ compose-components-resources = { module = "org.jetbrains.compose.components:comp
 desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
 moko-permissions = { group = "dev.icerock.moko", name = "permissions", version.ref = "moko-permissions" }
 moko-permissions-compose = { group = "dev.icerock.moko", name = "permissions-compose", version.ref = "moko-permissions" }
+
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
