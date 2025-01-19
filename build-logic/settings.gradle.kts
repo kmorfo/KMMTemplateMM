@@ -1,8 +1,4 @@
-rootProject.name = "KMMTemplateMM"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
 pluginManagement {
-    includeBuild("build-logic")
     repositories {
         google {
             mavenContent {
@@ -15,8 +11,8 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google {
             mavenContent {
@@ -27,6 +23,12 @@ dependencyResolutionManagement {
         }
         mavenCentral()
     }
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
+    }
 }
 
-include(":composeApp")
+rootProject.name = "build-logic"
+include(":convention")
