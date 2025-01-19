@@ -7,6 +7,8 @@ kotlin {
     sourceSets {
         androidMain.dependencies { }
         commonMain.dependencies {
+            implementation(libs.napier)
+
             implementation(projects.core.presentation)
             implementation(projects.core.data)
             implementation(projects.core.domain)

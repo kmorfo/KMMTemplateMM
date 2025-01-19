@@ -38,6 +38,7 @@ test-runner = "1.6.2"
 test-core = "1.6.1"
 
 ktlint = "12.1.1"
+napier = "2.6.1"
 
 # Project versions
 projectApplicationId = "es.rlujancreations.mmkmptemplate"
@@ -86,6 +87,8 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+
+napier = { module = "io.github.aakira:napier", version.ref = "napier" }
 
 #Koin
 koin-bom = { group = "io.insert-koin", name = "koin-bom", version.ref = "koin" }
