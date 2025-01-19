@@ -31,6 +31,7 @@ private fun composeDepencencies(project: Project) {
             implementation(libs.findLibrary("compose.components.uiToolingPreview").get())
             implementation(libs.findLibrary("androidx.compose.ui.tooling").get())
             implementation(libs.findLibrary("androidx.activity.compose").get())
+
             implementation(libs.findLibrary("koin.android").get())
         }
     }
@@ -46,6 +47,9 @@ private fun composeDepencencies(project: Project) {
     kotlinExtension.sourceSets.getByName("commonMain") {
         dependencies {
             implementation(libs.findBundle("compose").get())
+
+            implementation(libs.findLibrary("kotlinx.serialization.json").get())
+            implementation(libs.findLibrary("androidx.navigation.compose").get())
 
             implementation(project.dependencies.platform(libs.findLibrary("koin.bom").get()))
             implementation(libs.findLibrary("koin.core").get())

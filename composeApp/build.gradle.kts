@@ -5,11 +5,8 @@ plugins {
 kotlin {
 
     sourceSets {
-
-        androidMain.dependencies {
-        }
-        commonMain.dependencies {
-        }
+        androidMain.dependencies { }
+        commonMain.dependencies { }
     }
 }
 

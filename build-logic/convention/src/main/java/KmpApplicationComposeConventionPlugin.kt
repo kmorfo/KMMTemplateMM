@@ -15,6 +15,7 @@ class KmpApplicationComposeConventionPlugin : Plugin<Project> {
                 pluginManager.apply("kmmtemplatemm.multiplatform.application")
                 pluginManager.apply("org.jetbrains.compose")
                 pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
+                pluginManager.apply("org.jetbrains.kotlin.plugin.serialization")
             }
 
             val extension = extensions.getByType<ApplicationExtension>()
