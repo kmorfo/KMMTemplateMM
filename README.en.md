@@ -27,6 +27,7 @@ This repository is a template for developing multiplatform applications using Ko
     -   `Compose Navigation` for navigation in declarative interfaces.
     -   `Moko Permissions` for multiplatform permission handling.
     -   `JUnit` for unit testing.
+    -   `Napier` is a logger library for Kotlin Multiplatform.
 
 ### Included Modules
 
