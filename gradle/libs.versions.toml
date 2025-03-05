@@ -1,8 +1,8 @@
 [versions]
 agp = "8.6.1"
-androidx-activityCompose = "1.10.0"
+androidx-activityCompose = "1.10.1"
 androidx-appcompat = "1.7.0"
-androidx-constraintlayout = "2.2.0"
+androidx-constraintlayout = "2.2.1"
 androidx-core-ktx = "1.15.0"
 androidx-espresso-core = "3.6.1"
 androidx-lifecycle = "2.8.4"
@@ -15,18 +15,18 @@ kotlin = "2.1.0"
 jetbrainsKotlinJvm = "2.0.0"
 coroutines = "1.10.1"
 
-androidTools = "31.8.0"
+androidTools = "31.9.0"
 ksp = "2.1.0-1.0.29"
 
-room = "2.7.0-alpha11"
-androidx-sqliteBundled = "2.5.0-alpha11"
+room = "2.7.0-rc01"
+androidx-sqliteBundled = "2.5.0-rc01"
 
 buildconfig = "5.3.5"
-desugar_jdk_libs = "2.1.4"
+desugar_jdk_libs = "2.1.5"
 koin = "4.0.0"
 
 ktor = "3.0.1"
-ktorClientLogging = "3.0.0"
+ktorClientLogging = "3.0.1"
 ktorServerCallLogging = "3.0.0"
 
 kotlinxDatetime = "0.6.1"
