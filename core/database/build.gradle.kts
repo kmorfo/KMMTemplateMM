@@ -6,12 +6,17 @@ plugins {
 }
 
 kotlin {
+    jvm("desktop")
+
     sourceSets {
+        val desktopMain by getting
+
         commonMain.dependencies {
             implementation(projects.core.domain)
 
             implementation(libs.kotlinx.datetime)
         }
+        desktopMain.dependencies {}
     }
 }
 android {

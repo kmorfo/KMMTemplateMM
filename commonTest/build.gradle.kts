@@ -6,7 +6,11 @@ plugins {
 }
 
 kotlin {
+    jvm("desktop")
+
     sourceSets {
+        val desktopMain by getting
+
         commonMain.dependencies {
             // Import modules to test
             implementation(projects.core.database)
@@ -20,6 +24,7 @@ kotlin {
         commonTest.dependencies {
             implementation(projects.commonTest)
         }
+        desktopMain.dependencies {}
     }
 }
 

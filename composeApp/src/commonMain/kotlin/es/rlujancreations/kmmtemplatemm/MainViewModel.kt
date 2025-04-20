@@ -5,5 +5,4 @@ import androidx.lifecycle.ViewModel
 /**
  * Created by Raúl L.C. on 20/3/25.
  */
-class MainViewModel  : ViewModel() {
-}
+class MainViewModel : ViewModel()

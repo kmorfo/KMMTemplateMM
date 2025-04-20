@@ -1,4 +1,3 @@
-import org.gradle.declarative.dsl.schema.FqName.Empty.packageName
 import java.util.Properties
 
 plugins {
@@ -9,10 +8,15 @@ plugins {
 }
 
 kotlin {
+    jvm("desktop")
+
     sourceSets {
+        val desktopMain by getting
+
         commonMain.dependencies {
             implementation(projects.core.domain)
         }
+        desktopMain.dependencies {}
     }
 }
 

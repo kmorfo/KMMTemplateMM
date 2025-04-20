@@ -34,9 +34,9 @@ class HttpClientFactory(
             install(ContentNegotiation) {
                 json(
                     json =
-                    Json {
-                        ignoreUnknownKeys = true
-                    },
+                        Json {
+                            ignoreUnknownKeys = true
+                        },
                 )
             }
             install(Logging) {
