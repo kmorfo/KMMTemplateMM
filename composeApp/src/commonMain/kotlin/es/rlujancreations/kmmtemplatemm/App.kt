@@ -9,7 +9,6 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun App() {
-    KoinContext {
         MaterialTheme {
             val navController = rememberNavController()
             val viewModel = koinViewModel<MainViewModel>()
@@ -19,4 +18,3 @@ fun App() {
             )
         }
     }
-}
