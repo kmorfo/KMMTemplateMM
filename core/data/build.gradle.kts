@@ -24,7 +24,7 @@ buildConfig {
 
     buildConfigField("BASE_URL", baseUrl)
 }
-
-android {
-    namespace = "es.rlujancreations.core.data"
-}
+//
+//android {
+//    namespace = "es.rlujancreations.core.data"
+//}

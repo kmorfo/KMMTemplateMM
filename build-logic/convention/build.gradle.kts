@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     `kotlin-dsl`
@@ -12,8 +14,35 @@ dependencies {
     compileOnly(libs.ksp.gradlePlugin)
     compileOnly(libs.room.gradlePlugin)
 }
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_21
+    }
+}
+
+tasks {
+    validatePlugins {
+        enableStricterValidation = true
+        failOnWarning = true
+    }
+}
+
 gradlePlugin {
     plugins {
+        register("androidApplication") {
+            id = "kmmtemplatemm.android.application"
+            implementationClass = "AndroidApplicationConventionPlugin"
+        }
+        register("androidComposeApplication") {
+            id = "kmmtemplatemm.android.application.compose"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
+        }
         register("multiplatformApplication") {
             id = "kmmtemplatemm.multiplatform.application"
             implementationClass = "KmpApplicationConventionPlugin"

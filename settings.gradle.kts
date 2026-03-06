@@ -37,3 +37,4 @@ include(":core:database")
 include(":core:domain")
 
 include(":commonTest")
+include(":androidApp")
