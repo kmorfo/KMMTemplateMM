@@ -1,29 +1,29 @@
-import es.rlujancreations.convention.configureAndroidLibraryTarget
-import es.rlujancreations.convention.configureIosFrameworks
+import es.rlujancreations.convention.configureKotlinMultiplatform
+import es.rlujancreations.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.gradle.kotlin.dsl.dependencies
 
 /**
  * Created by Raúl L.C. on 19/1/25.
  */
 
 class KmpLibraryConventionPlugin : Plugin<Project> {
+
     override fun apply(target: Project) {
-        target.run {
-            pluginManager.run {
-                apply("com.android.library")
+        with(target) {
+            with(pluginManager) {
+                apply("com.android.kotlin.multiplatform.library")
                 apply("org.jetbrains.kotlin.multiplatform")
+                apply("org.jetbrains.kotlin.plugin.serialization")
             }
-            extensions.configure(KotlinMultiplatformExtension::class.java) {
-                androidTarget {
-                    configureAndroidLibraryTarget()
-                }
-                iosX64()
-                iosArm64()
-                iosSimulatorArm64()
+
+            configureKotlinMultiplatform()
+
+            dependencies {
+                "commonMainImplementation"(libs.findLibrary("kotlinx-serialization-json").get())
+                "commonTestImplementation"(libs.findLibrary("kotlin-test").get())
             }
-            configureIosFrameworks()
         }
     }
 }

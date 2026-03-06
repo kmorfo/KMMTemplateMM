@@ -10,6 +10,6 @@ kotlin {
     }
 }
 
-android {
-    namespace = "es.rlujancreations.core.domain"
-}
+//android {
+//    namespace = "es.rlujancreations.core.domain"
+//}

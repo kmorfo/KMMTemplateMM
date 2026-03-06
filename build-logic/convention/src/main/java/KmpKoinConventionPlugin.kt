@@ -17,11 +17,11 @@ class KmpKoinConventionPlugin : Plugin<Project> {
             }
             kotlinExtension.sourceSets.getByName("commonMain") {
                 dependencies {
-                    implementation(
-                        project.dependencies.platform(
-                            libs.findLibrary("koin.bom").get(),
-                        ),
-                    )
+//                    implementation(
+//                        project.dependencies.platform(
+//                            libs.findLibrary("koin.bom").get(),
+//                        ),
+//                    )
                     implementation(libs.findLibrary("koin.core").get())
                 }
             }

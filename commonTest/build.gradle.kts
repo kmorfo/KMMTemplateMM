@@ -22,7 +22,7 @@ kotlin {
         }
     }
 }
-
-android {
-    namespace = "es.rlujancreations.commonTest"
-}
+//
+//android {
+//    namespace = "es.rlujancreations.commonTest"
+//}
