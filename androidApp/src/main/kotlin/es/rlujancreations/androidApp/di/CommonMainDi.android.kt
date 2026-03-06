@@ -1,4 +1,4 @@
-package es.rlujancreations.kmmtemplatemm.di
+package es.rlujancreations.androidApp.di
 
 import org.koin.core.module.Module
 

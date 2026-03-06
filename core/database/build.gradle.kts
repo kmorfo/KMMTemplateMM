@@ -14,6 +14,6 @@ kotlin {
         }
     }
 }
-android {
-    namespace = "es.rlujancreations.core.database"
-}
+//android {
+//    namespace = "es.rlujancreations.core.database"
+//}

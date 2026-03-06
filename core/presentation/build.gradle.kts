@@ -9,7 +9,7 @@ kotlin {
         }
     }
 }
-
-android {
-    namespace = "es.rlujancreations.core.presentation"
-}
+//
+//android {
+//    namespace = "es.rlujancreations.core.presentation"
+//}

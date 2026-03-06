@@ -10,16 +10,16 @@ class KmpKotlinTestConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         target.run {
-            task("testClasses")
-            kotlinExtension.sourceSets.getByName("androidUnitTest") {
-                dependencies {
-                    implementation(libs.findLibrary("androidx.test.junit").get())
-                }
-            }
-            kotlinExtension.sourceSets.getByName("androidInstrumentedTest") {
-                dependencies {
-                }
-            }
+//            task("testClasses")
+//            kotlinExtension.sourceSets.getByName("androidUnitTest") {
+//                dependencies {
+//                    implementation(libs.findLibrary("androidx.test.junit").get())
+//                }
+//            }
+//            kotlinExtension.sourceSets.getByName("androidInstrumentedTest") {
+//                dependencies {
+//                }
+//            }
             kotlinExtension.sourceSets.getByName("commonMain") {
                 dependencies {
                 }
@@ -30,7 +30,7 @@ class KmpKotlinTestConventionPlugin : Plugin<Project> {
                 dependencies {
                     implementation(libs.findLibrary("kotlin.test").get())
                     implementation(libs.findLibrary("kotlinx.coroutines.test").get())
-                    implementation(libs.findLibrary("koin.test").get())
+//                    implementation(libs.findLibrary("koin.test").get())
                 }
             }
         }

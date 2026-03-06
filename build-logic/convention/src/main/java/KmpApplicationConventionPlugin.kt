@@ -1,9 +1,12 @@
-import es.rlujancreations.convention.ExtensionType
-import es.rlujancreations.convention.configureAndroidTarget
-import es.rlujancreations.convention.configureBuildTypes
-import es.rlujancreations.convention.configureIosFrameworks
+import es.rlujancreations.convention.applyHierarchyTemplate
+import es.rlujancreations.convention.configureAndroidLibraryTarget
+import es.rlujancreations.convention.configureDesktopTarget
+import es.rlujancreations.convention.configureIosTargets
+import es.rlujancreations.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 /**
@@ -15,26 +18,24 @@ class KmpApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         target.run {
             pluginManager.run {
-                apply("com.android.application")
+                apply("com.android.kotlin.multiplatform.library")
                 apply("org.jetbrains.kotlin.multiplatform")
+                apply("org.jetbrains.compose")
+                apply("org.jetbrains.kotlin.plugin.compose")
+                apply("org.jetbrains.kotlin.plugin.serialization")
             }
 
-            extensions.configure(KotlinMultiplatformExtension::class.java) {
-                androidTarget {
-                    configureAndroidTarget()
+            configureAndroidLibraryTarget()
+            configureIosTargets()
+            configureDesktopTarget()
 
-                    configureBuildTypes(
-                        extensionType = ExtensionType.APPLICATION
-                    )
-
-                }
-
-                iosX64()
-                iosArm64()
-                iosSimulatorArm64()
-
+            extensions.configure<KotlinMultiplatformExtension> {
+                applyHierarchyTemplate()
             }
-            configureIosFrameworks()
+
+            dependencies {
+                "androidMainImplementation"(libs.findLibrary("compose-uiTooling").get())
+            }
         }
     }
 }
