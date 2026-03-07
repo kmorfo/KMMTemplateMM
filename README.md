@@ -89,13 +89,14 @@ proyecto está organizado en módulos que ofrecen los siguientes beneficios:
 project-root/
 ├── composeApp/       # Punto de entrada de la aplicación
 ├── core/
-│   ├── data/        # Repositorios y acceso a datos
-│   ├── database/    # Configuración de Room
-│   ├── domain/      # Casos de uso y lógica de negocio
+│   ├── data/         # Repositorios y acceso a datos
+│   ├── database/     # Configuración de Room
+│   ├── domain/       # Casos de uso y lógica de negocio
+|   ├── designsystem/ # UI templates
 │   └── presentation/ # Lógica de presentación
-├── build-logic/     # Plugins de convenciones
-├── commonTest/      # Pruebas unitarias comunes
-└── gradle/         # Configuraciones de Gradle
+├── build-logic/      # Plugins de convenciones
+├── commonTest/       # Pruebas unitarias comunes
+└── gradle/           # Configuraciones de Gradle
 ```
 
 ## Contribución
