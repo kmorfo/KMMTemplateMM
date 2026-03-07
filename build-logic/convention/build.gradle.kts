@@ -5,7 +5,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "es.rlujancreations.kmmtemplatemm.buildlogic"
+group = "es.rlujancreations.convention.buildlogic"
 
 dependencies {
     compileOnly(libs.android.gradlePlugin)
@@ -13,6 +13,8 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
     compileOnly(libs.room.gradlePlugin)
+    implementation(libs.buildkonfig.gradlePlugin)
+    implementation(libs.buildkonfig.compiler)
 }
 
 java {
@@ -36,48 +38,40 @@ tasks {
 gradlePlugin {
     plugins {
         register("androidApplication") {
-            id = "kmmtemplatemm.android.application"
+            id = "es.rlujancreations.convention.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidComposeApplication") {
-            id = "kmmtemplatemm.android.application.compose"
+            id = "es.rlujancreations.convention.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
-        register("multiplatformApplication") {
-            id = "kmmtemplatemm.multiplatform.application"
-            implementationClass = "KmpApplicationConventionPlugin"
+        register("cmpApplication") {
+            id = "es.rlujancreations.convention.cmp.application"
+            implementationClass = "CmpApplicationConventionPlugin"
         }
-        register("multiplatformApplicationCompose") {
-            id = "kmmtemplatemm.multiplatform.application.compose"
-            implementationClass = "KmpApplicationComposeConventionPlugin"
-        }
-        register("multiplatformLibrary") {
-            id = "kmmtemplatemm.multiplatform.library"
+        register("kmpLibrary") {
+            id = "es.rlujancreations.convention.kmp.library"
             implementationClass = "KmpLibraryConventionPlugin"
         }
-        register("multiplatformLibraryCompose") {
-            id = "kmmtemplatemm.multiplatform.library.compose"
-            implementationClass = "KmpLibraryComposeConventionPlugin"
+        register("cmpLibrary") {
+            id = "es.rlujancreations.convention.cmp.library"
+            implementationClass = "CmpLibraryConventionPlugin"
         }
-        register("multiplatformFeatureUi") {
-            id = "kmmtemplatemm.multiplatform.feature.ui"
-            implementationClass = "KmpFeatureUiConventionPlugin"
+        register("cmpFeature") {
+            id = "es.rlujancreations.convention.cmp.feature"
+            implementationClass = "CmpFeatureConventionPlugin"
         }
-        register("kmpRoom") {
-            id = "kmmtemplatemm.multiplatform.room"
-            implementationClass = "KmpRoomConventionPlugin"
+        register("buildKonfig") {
+            id = "es.rlujancreations.convention.buildkonfig"
+            implementationClass = "BuildKonfigConventionPlugin"
         }
-        register("KmpKoin") {
-            id = "kmmtemplatemm.multiplatform.koin"
-            implementationClass = "KmpKoinConventionPlugin"
+        register("room") {
+            id = "es.rlujancreations.convention.room"
+            implementationClass = "RoomConventionPlugin"
         }
-        register("KmpKtor") {
-            id = "kmmtemplatemm.multiplatform.ktor"
-            implementationClass = "KmpKtorConventionPlugin"
-        }
-        register("KmpKotlinTest") {
-            id = "kmmtemplatemm.multiplatform.kotlin.test"
-            implementationClass = "KmpKotlinTestConventionPlugin"
+        register("KoinConventionPlugin") {
+            id = "es.rlujancreations.convention.koin"
+            implementationClass = "KoinConventionPlugin"
         }
     }
 }

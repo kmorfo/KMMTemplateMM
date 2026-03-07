@@ -1,6 +1,6 @@
 package es.rlujancreations.core.data.networking
 
-import es.rlujancreations.core.data.BuildConfig
+import es.rlujancreations.core.data.BuildKonfig
 import es.rlujancreations.core.domain.util.DataError
 import es.rlujancreations.core.domain.util.Result
 import io.ktor.client.HttpClient
@@ -28,8 +28,8 @@ import kotlinx.serialization.SerializationException
 suspend inline fun <reified Response : Any> HttpClient.get(
     route: String,
     queryParameters: Map<String, String> = mapOf(),
-): Result<Response, DataError.Network> {
-    return safeCall {
+): Result<Response, DataError.Network> =
+    safeCall {
         get {
             url(constructRoute(route))
             queryParameters.forEach { (key, value) ->
@@ -37,13 +37,12 @@ suspend inline fun <reified Response : Any> HttpClient.get(
             }
         }
     }
-}
 
 suspend inline fun HttpClient.getPDF(
     route: String,
     queryParameters: Map<String, String> = mapOf(),
-): Result<ByteArray, DataError.Network> {
-    return try {
+): Result<ByteArray, DataError.Network> =
+    try {
         val response =
             get {
                 url(constructRoute(route))
@@ -70,14 +69,13 @@ suspend inline fun HttpClient.getPDF(
     } catch (e: Exception) {
         Result.Error(DataError.Network.UNKNOWN)
     }
-}
 
 suspend inline fun <reified Request, reified Response : Any> HttpClient.post(
     route: String,
     queryParameters: Map<String, Any?> = mapOf(),
     body: Request,
-): Result<Response, DataError.Network> {
-    return safeCall {
+): Result<Response, DataError.Network> =
+    safeCall {
         post {
             url(constructRoute(route))
             queryParameters.forEach { (key, value) ->
@@ -86,14 +84,13 @@ suspend inline fun <reified Request, reified Response : Any> HttpClient.post(
             setBody(body)
         }
     }
-}
 
 suspend inline fun <reified Request, reified Response : Any> HttpClient.patch(
     route: String,
     queryParameters: Map<String, Any?> = mapOf(),
     body: Request,
-): Result<Response, DataError.Network> {
-    return safeCall {
+): Result<Response, DataError.Network> =
+    safeCall {
         patch {
             url(constructRoute(route))
             queryParameters.forEach { (key, value) ->
@@ -102,13 +99,12 @@ suspend inline fun <reified Request, reified Response : Any> HttpClient.patch(
             setBody(body)
         }
     }
-}
 
 suspend inline fun <reified Response : Any> HttpClient.delete(
     route: String,
     queryParameters: Map<String, Any?> = mapOf(),
-): Result<Response, DataError.Network> {
-    return safeCall {
+): Result<Response, DataError.Network> =
+    safeCall {
         delete {
             url(constructRoute(route))
             queryParameters.forEach { (key, value) ->
@@ -116,7 +112,6 @@ suspend inline fun <reified Response : Any> HttpClient.delete(
             }
         }
     }
-}
 
 suspend inline fun <reified T> safeCall(execute: () -> HttpResponse): Result<T, DataError.Network> {
     val response =
@@ -139,8 +134,8 @@ suspend inline fun <reified T> safeCall(execute: () -> HttpResponse): Result<T, 
 
 suspend inline fun <reified T> responseToResult(
     response: HttpResponse,
-): Result<T, DataError.Network> {
-    return when (response.status.value) {
+): Result<T, DataError.Network> =
+    when (response.status.value) {
         in 200..299 -> Result.Success(response.body<T>())
         in 401..403 -> Result.Error(DataError.Network.UNAUTHORIZED)
         404 -> Result.Error(DataError.Network.NO_DATA)
@@ -153,12 +148,10 @@ suspend inline fun <reified T> responseToResult(
         in 500..599 -> Result.Error(DataError.Network.SERVER_ERROR)
         else -> Result.Error(DataError.Network.UNKNOWN)
     }
-}
 
-fun constructRoute(route: String): String {
-    return when {
-        BuildConfig.BASE_URL.let { route.contains(it) } -> route
-        route.startsWith("/") -> BuildConfig.BASE_URL + route
-        else -> BuildConfig.BASE_URL + "/$route"
+fun constructRoute(route: String): String =
+    when {
+        BuildKonfig.BASE_URL.let { route.contains(it) } -> route
+        route.startsWith("/") -> BuildKonfig.BASE_URL + route
+        else -> BuildKonfig.BASE_URL + "/$route"
     }
-}

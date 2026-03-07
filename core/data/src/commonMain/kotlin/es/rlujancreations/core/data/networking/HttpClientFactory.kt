@@ -29,14 +29,15 @@ class HttpClientFactory(
         const val SOCKET_TIMEOUT = 5000L
     }
 
-    fun build(): HttpClient {
-        return HttpClient(CIO) { // CIO for not https
+    fun build(): HttpClient =
+        HttpClient(CIO) {
+            // CIO for not https
             install(ContentNegotiation) {
                 json(
                     json =
-                    Json {
-                        ignoreUnknownKeys = true
-                    },
+                        Json {
+                            ignoreUnknownKeys = true
+                        },
                 )
             }
             install(Logging) {
@@ -76,5 +77,4 @@ class HttpClientFactory(
                 }
             }
         }
-    }
 }

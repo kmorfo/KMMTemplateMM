@@ -1,14 +1,21 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
-    alias(libs.plugins.kmmtemplatemm.multiplatform.application.compose)
+    alias(libs.plugins.convention.cmp.application)
+    alias(libs.plugins.convention.koin)
     alias(libs.plugins.composeHotReload)
 }
 
 kotlin {
     androidLibrary {
-        compileSdk = libs.versions.projectCompileSdkVersion.get().toInt()
-        minSdk = libs.versions.projectMinSdkVersion.get().toInt()
+        compileSdk =
+            libs.versions.projectCompileSdkVersion
+                .get()
+                .toInt()
+        minSdk =
+            libs.versions.projectMinSdkVersion
+                .get()
+                .toInt()
         namespace = libs.versions.projectApplicationId.get()
         experimentalProperties["android.experimental.kmp.enableAndroidResources"] = true
     }
@@ -17,21 +24,25 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.activity.compose)
-
-            implementation(libs.koin.android)
         }
         commonMain.dependencies {
+            implementation(projects.core.data)
+            implementation(projects.core.database)
+            implementation(projects.core.domain)
+            implementation(projects.core.designsystem)
+            implementation(projects.core.presentation)
+
+            implementation(libs.napier)
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
-            implementation(libs.compose.material)
+            implementation(libs.compose.material3)
             implementation(libs.compose.ui)
             implementation(libs.compose.components.resources)
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
 
-            implementation(libs.jetbrains.compose.navigation)
-            implementation(libs.bundles.koin)
+            implementation(libs.androidx.navigation.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -39,9 +50,6 @@ kotlin {
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
-            implementation(libs.koin.compose)
-            implementation(libs.koin.compose.viewmodel)
-            implementation(libs.koin.compose.viewmodel)
         }
     }
 }

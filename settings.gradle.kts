@@ -29,12 +29,17 @@ dependencyResolutionManagement {
     }
 }
 
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
+
+include(":androidApp")
 include(":composeApp")
 
 include(":core:data")
-include(":core:presentation")
 include(":core:database")
+include(":core:designsystem")
 include(":core:domain")
+include(":core:presentation")
 
 include(":commonTest")
-include(":androidApp")

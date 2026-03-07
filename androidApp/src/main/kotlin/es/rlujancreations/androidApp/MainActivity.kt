@@ -1,4 +1,4 @@
-package es.rlujancreations.kmmtemplatemm
+package es.rlujancreations.androidApp
 
 import android.app.Activity
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import es.rlujancreations.mmkmptemplate.App
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
 

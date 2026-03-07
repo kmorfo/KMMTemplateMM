@@ -1,13 +1,21 @@
 package es.rlujancreations.mmkmptemplate
 
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import androidx.compose.ui.window.rememberWindowState
+import es.rlujancreations.mmkmptemplate.di.initKoin
 
-fun main() = application {
-    Window(
-        onCloseRequest = ::exitApplication,
-        title = "KMMTemplateMM",
-    ) {
-        App()
+@Suppress("ktlint")
+fun main() =
+    application {
+        val state = rememberWindowState(width = 1200.dp, height = 900.dp)
+        initKoin()
+        Window(
+            onCloseRequest = ::exitApplication,
+            title = "kmmtemplatemm",
+            state = state,
+        ) {
+            App()
+        }
     }
-}
