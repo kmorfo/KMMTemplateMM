@@ -83,13 +83,14 @@ Modularization is a key approach to building scalable and maintainable software.
 project-root/
 ├── composeApp/       # Application entry point
 ├── core/
-│   ├── data/        # Repositories and data access
-│   ├── database/    # Room configuration
-│   ├── domain/      # Business logic and use cases
+│   ├── data/         # Repositories and data access
+│   ├── database/     # Room configuration
+│   ├── domain/       # Business logic and use cases
+|   └── designsystem/ # UI templates
 │   └── presentation/ # Presentation logic
-├── build-logic/     # Convention plugins
-├── commonTest/      # Shared unit tests
-└── gradle/         # Gradle configurations
+├── build-logic/      # Convention plugins
+├── commonTest/       # Shared unit tests
+└── gradle/           # Gradle configurations
 
 ```
 
