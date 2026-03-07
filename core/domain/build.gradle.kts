@@ -1,15 +1,23 @@
 plugins {
-    alias(libs.plugins.kmmtemplatemm.multiplatform.library)
-    alias(libs.plugins.kmmtemplatemm.multiplatform.koin)
+    alias(libs.plugins.convention.kmp.library)
 }
 
 kotlin {
     sourceSets {
-        commonMain.dependencies {
+        commonMain {
+            dependencies {
+                implementation(libs.kotlin.stdlib)
+                implementation(libs.kotlinx.coroutines.core)
+                // Add KMP dependencies here
+            }
+        }
+
+        androidMain {
+            dependencies { }
+        }
+
+        iosMain {
+            dependencies { }
         }
     }
 }
-
-//android {
-//    namespace = "es.rlujancreations.core.domain"
-//}

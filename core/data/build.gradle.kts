@@ -1,30 +1,48 @@
-import org.gradle.declarative.dsl.schema.FqName.Empty.packageName
-import java.util.Properties
-
 plugins {
-    alias(libs.plugins.kmmtemplatemm.multiplatform.library)
-    alias(libs.plugins.kmmtemplatemm.multiplatform.ktor)
-    alias(libs.plugins.kmmtemplatemm.multiplatform.koin)
-    alias(libs.plugins.gradleBuildConfig)
+    alias(libs.plugins.convention.kmp.library)
+    alias(libs.plugins.convention.buildkonfig)
 }
 
 kotlin {
     sourceSets {
-        commonMain.dependencies {
-            implementation(projects.core.domain)
+        commonMain {
+            dependencies {
+                implementation(projects.core.domain)
+                implementation(libs.kotlin.stdlib)
+                implementation(libs.kotlinx.coroutines.core)
+
+                implementation(libs.bundles.ktor.common)
+
+                implementation(libs.datastore)
+                implementation(libs.datastore.preferences)
+
+                implementation(libs.androidx.room.runtime)
+                implementation(libs.sqlite.bundled)
+            }
+        }
+
+        val jvmCommonMain by creating {
+            dependsOn(commonMain.get())
+        }
+
+        desktopMain {
+            dependsOn(jvmCommonMain)
+            dependencies {
+                implementation(libs.ktor.client.okhttp)
+            }
+        }
+
+        androidMain {
+            dependsOn(jvmCommonMain)
+            dependencies {
+                implementation(libs.ktor.client.okhttp)
+            }
+        }
+
+        iosMain {
+            dependencies {
+                implementation(libs.ktor.client.darwin)
+            }
         }
     }
 }
-
-buildConfig {
-    packageName("es.rlujancreations.core.data")
-    val properties = Properties()
-    properties.load(project.rootProject.file("local.properties").reader())
-    val baseUrl = properties.getProperty("BASE_URL")
-
-    buildConfigField("BASE_URL", baseUrl)
-}
-//
-//android {
-//    namespace = "es.rlujancreations.core.data"
-//}

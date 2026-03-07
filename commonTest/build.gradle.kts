@@ -1,28 +1,39 @@
 plugins {
-    alias(libs.plugins.kmmtemplatemm.multiplatform.library)
-    alias(libs.plugins.kmmtemplatemm.multiplatform.room)
-    alias(libs.plugins.kmmtemplatemm.multiplatform.koin)
-    alias(libs.plugins.kmmtemplatemm.multiplatform.kotlin.test)
+    alias(libs.plugins.convention.kmp.library)
 }
 
 kotlin {
     sourceSets {
-        commonMain.dependencies {
-            // Import modules to test
-            implementation(projects.core.database)
+        commonMain {
+            dependencies {
+                // Import modules to test
 
-            implementation(libs.kotlinx.datetime)
 
-            implementation(libs.kotlinx.serialization.json)
+                // Add KMP dependencies here
+                implementation(libs.kotlin.stdlib)
+                implementation(libs.kotlinx.coroutines.core)
 
-            implementation(libs.kotlinx.coroutines.core)
+                implementation(projects.core.database)
+
+                implementation(libs.kotlinx.datetime)
+
+                implementation(libs.kotlinx.serialization.json)
+
+
+                implementation(libs.kotlin.test)
+                implementation(libs.kotlinx.coroutines.test)
+                implementation(libs.kotlin.test)
+            }
         }
-        commonTest.dependencies {
-            implementation(projects.commonTest)
+
+        androidMain {
+            dependencies {
+                implementation(libs.androidx.test.junit)
+            }
+        }
+
+        iosMain {
+            dependencies { }
         }
     }
 }
-//
-//android {
-//    namespace = "es.rlujancreations.commonTest"
-//}

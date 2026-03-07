@@ -15,7 +15,8 @@ expect val databaseNativeModule: Module
 val coreDatabaseModule =
     module {
         single {
-            get<DatabaseFactory>().create()
+            get<DatabaseFactory>()
+                .create()
                 .setDriver(BundledSQLiteDriver())
                 .build()
         }
