@@ -41,6 +41,12 @@ serialization = "1.11.0"
 test-core = "1.7.0"
 test-runner = "1.7.0"
 
+# Navigation3 for native Android
+navigation3 = "1.1.0"
+
+# Navigation3 for Compose Multiplatform
+cmpNavigation3 = "1.0.0-alpha06"
+
 # Project versions
 projectApplicationId = "es.rlujancreations.mmkmptemplate"
 projectCompileSdkVersion = "36"
@@ -144,6 +150,14 @@ napier = { module = "io.github.aakira:napier", version.ref = "napier" }
 material3-adaptive = { module = "org.jetbrains.compose.material3.adaptive:adaptive", version.ref = "adaptive" }
 material3-adaptive-layout = { module = "org.jetbrains.compose.material3.adaptive:adaptive-layout", version.ref = "adaptive" }
 material3-adaptive-navigation = { module = "org.jetbrains.compose.material3.adaptive:adaptive-navigation", version.ref = "adaptive" }
+
+# Navigation3 For native Android
+androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" }
+androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" }
+
+# Navigation3 for Compose Multiplatform
+jetbrains-navigation3-ui = { module = "org.jetbrains.androidx.navigation3:navigation3-ui", version.ref = "cmpNavigation3" }
+jetbrains-lifecycle-viewmodel-nav3 = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "androidx-lifecycle" }
 
 # Permission handling
 moko-permissions = { group = "dev.icerock.moko", name = "permissions", version.ref = "moko-permissions" }
