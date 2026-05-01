@@ -16,6 +16,9 @@ dependencies {
 
     implementation(libs.bundles.compose)
 
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.napier)
