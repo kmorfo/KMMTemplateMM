@@ -41,5 +41,6 @@ include(":core:database")
 include(":core:designsystem")
 include(":core:domain")
 include(":core:presentation")
+include(":core:navigation")
 
 include(":commonTest")
