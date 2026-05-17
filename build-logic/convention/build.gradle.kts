@@ -73,5 +73,13 @@ gradlePlugin {
             id = "es.rlujancreations.convention.koin"
             implementationClass = "KoinConventionPlugin"
         }
+        register("KtorConventionPlugin") {
+            id = "es.rlujancreations.convention.ktor"
+            implementationClass = "KtorConventionPlugin"
+        }
+        register("TestUnitConventionPlugin") {
+            id = "es.rlujancreations.convention.test.unit"
+            implementationClass = "TestUnitConventionPlugin"
+        }
     }
 }

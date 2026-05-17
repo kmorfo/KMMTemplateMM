@@ -14,8 +14,9 @@ class BuildKonfigConventionPlugin : Plugin<Project> {
                 apply("com.codingfeline.buildkonfig")
             }
 
+
             extensions.configure<BuildKonfigExtension> {
-                packageName = target.pathToPackageName()
+                packageName.set(target.pathToPackageName())
                 defaultConfigs {
                     val apiKey = gradleLocalProperties(rootDir, rootProject.providers)
                         .getProperty(API_KEY_PROPERTY)
@@ -23,8 +24,24 @@ class BuildKonfigConventionPlugin : Plugin<Project> {
                     val baseUrl = gradleLocalProperties(rootDir, rootProject.providers)
                         .getProperty(BASE_URL_PROPERTY)
                         ?: throw IllegalStateException("$ERROR_MESSAGE $BASE_URL_PROPERTY")
-                    buildConfigField(FieldSpec.Type.STRING, API_KEY_PROPERTY, apiKey)
-                    buildConfigField(FieldSpec.Type.STRING, BASE_URL_PROPERTY, baseUrl)
+
+                    buildConfigField(
+                        type = FieldSpec.Type.STRING,
+                        name = API_KEY_PROPERTY,
+                        value = apiKey,
+                    )
+                    buildConfigField(
+                        type = FieldSpec.Type.STRING,
+                        name = BASE_URL_PROPERTY,
+                        value = baseUrl,
+                    )
+
+
+                    //Solve error with release version
+                    tasks.matching { it.name.startsWith("prepare") || it.name.startsWith("merge") }
+                        .configureEach {
+                            mustRunAfter("generateBuildKonfig")
+                        }
                 }
             }
         }

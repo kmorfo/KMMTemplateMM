@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.convention.kmp.library)
+    alias(libs.plugins.convention.room)
     alias(libs.plugins.convention.buildkonfig)
 }
 
@@ -9,13 +10,9 @@ kotlin {
             dependencies {
                 implementation(projects.core.domain)
 
-                implementation(libs.kotlin.stdlib)
-
                 implementation(libs.datastore)
                 implementation(libs.datastore.preferences)
 
-                implementation(libs.androidx.room.runtime)
-                implementation(libs.sqlite.bundled)
             }
         }
 

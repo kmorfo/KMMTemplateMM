@@ -2,6 +2,7 @@ package es.rlujancreations.mmkmptemplate.di
 
 import es.rlujancreacions.core.navigation.di.navigationModule
 import es.rlujancreations.core.data.di.coreDataModule
+import es.rlujancreations.core.data.di.platformCoreDataModule
 import es.rlujancreations.database.di.coreDatabaseModule
 import es.rlujancreations.database.di.databaseNativeModule
 import es.rlujancreations.mmkmptemplate.MainViewModel
@@ -24,6 +25,7 @@ fun initKoin(config: KoinAppDeclaration? = null) {
         modules(
             *commonNativeModules.toTypedArray(),
             coreDataModule,
+            platformCoreDataModule,
             coreDatabaseModule,
             databaseNativeModule,
             mainViewModelModule,

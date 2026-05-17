@@ -9,6 +9,7 @@ object KmpSourceSets {
     const val COMMON_TEST_IMPLEMENTATION = "commonTestImplementation"
 
     const val KSP_ANDROID = "kspAndroid"
+    const val KSP_IOS_MAIN = "iosMain"
     const val KSP_IOS_SIMULATOR_ARM64 = "kspIosSimulatorArm64"
     const val KSP_IOS_ARM64 = "kspIosArm64"
     const val KSP_IOS_X64 = "kspIosX64"

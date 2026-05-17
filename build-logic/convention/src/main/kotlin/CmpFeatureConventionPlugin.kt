@@ -14,32 +14,36 @@ class CmpFeatureConventionPlugin: Plugin<Project> {
             }
 
             dependencies {
-                val corePresentation = project(":core:presentation")
                 val coreDesignSystem = project(":core:designsystem")
+                val coreDomain = project(":core:domain")
+                val corePresentation = project(":core:presentation")
 
-                val composeRuntime = libs.findLibrary("compose-runtime").get()
-                val composeViewModel = libs.findLibrary("compose-viewmodel").get()
-                val lifecycleViewModel = libs.findLibrary("androidx-lifecycle-viewmodel").get()
-                val lifecycleRuntimeCompose = libs.findLibrary("androidx-lifecycle-runtime-compose").get()
+                val material3Adaptative = libs.findLibrary("material3-adaptive").get()
+                val composeUi = libs.findLibrary("compose-ui").get()
+                val composeFoundation = libs.findLibrary("compose-foundation").get()
+                val composeMaterial3 = libs.findLibrary("compose-material3").get()
+                val composeMaterialIconsCore = libs.findLibrary("compose-material-icons-core").get()
+                val composeComponentsResources = libs.findLibrary("compose-components-resources").get()
+                val androidxLifecycleRuntimeCompose = libs.findLibrary("androidx-lifecycle-runtime-compose").get()
+                val composeUiToolingPreview = libs.findLibrary("compose-uiToolingPreview").get()
+                val composeUiTooling = libs.findLibrary("compose-uiTooling").get()
+                val androidxComposeUiTooling = libs.findLibrary("androidx-compose-ui-tooling").get()
 
-                val jetbrainsLifecycleViewModelSavedState =
-                    libs.findLibrary("jetbrains-lifecycle-viewmodel-savedstate").get()
-                val jetbrainsSavedState = libs.findLibrary("jetbrains-savedstate").get()
-                val jetbrainsBundle = libs.findLibrary("jetbrains-bundle").get()
-                val navigationCompose = libs.findLibrary("androidx-navigation-compose").get()
-
-                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, corePresentation)
                 add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, coreDesignSystem)
+                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, coreDomain)
+                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, corePresentation)
 
-                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, composeRuntime)
-                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, composeViewModel)
-                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, lifecycleViewModel)
-                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, lifecycleRuntimeCompose)
+                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, composeUi)
+                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, composeFoundation)
+                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, composeMaterial3)
+                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, composeMaterialIconsCore)
+                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, composeComponentsResources)
+                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, androidxLifecycleRuntimeCompose)
+                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, composeUiToolingPreview)
+                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, material3Adaptative)
 
-                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, jetbrainsLifecycleViewModelSavedState)
-                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, jetbrainsSavedState)
-                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, jetbrainsBundle)
-                add(KmpSourceSets.COMMON_MAIN_IMPLEMENTATION, navigationCompose)
+                add(KmpSourceSets.ANDROID_MAIN_IMPLEMENTATION, composeUiTooling)
+                add(KmpSourceSets.ANDROID_MAIN_IMPLEMENTATION, androidxComposeUiTooling)
             }
         }
     }

@@ -8,8 +8,6 @@ kotlin {
             dependencies {
                 implementation(projects.core.domain)
 
-                implementation(libs.kotlin.stdlib)
-
                 implementation(libs.material3.adaptive)
                 implementation(libs.androidx.lifecycle.runtime.compose)
                 implementation(libs.bundles.koin.common)
@@ -29,4 +27,8 @@ kotlin {
             dependsOn(mobileMain)
         }
     }
+}
+
+compose.resources {
+    publicResClass = true
 }
