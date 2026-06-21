@@ -7,6 +7,7 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(projects.core.domain)
+                implementation(projects.core.designsystem)
 
                 implementation(libs.material3.adaptive)
                 implementation(libs.androidx.lifecycle.runtime.compose)
@@ -17,11 +18,7 @@ kotlin {
         }
 
         val mobileMain by getting {
-            dependencies {
-                implementation(libs.moko.permissions)
-                implementation(libs.moko.permissions.compose)
-                implementation(libs.moko.permissions.notifications)
-            }
+            dependencies { }
         }
         androidMain {
             dependsOn(mobileMain)
