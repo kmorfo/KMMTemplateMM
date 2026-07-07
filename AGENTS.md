@@ -169,7 +169,8 @@ class GetUserProfileUseCase(
 
 ## Testing principles
 
-* Use JUnit5 as the test framework
+* Tests for shared code live in each module's `commonTest` source set and must use `kotlin.test` annotations (`@Test`, `@BeforeTest`, `@AfterTest`) so they compile and run on every target, including Kotlin/Native (iOS)
+* JUnit5 (Jupiter) is only the JVM execution engine underneath `commonTest` (via the `kotlin-test-junit5` bridge, `androidHostTest`/`desktopTest`); do not import `org.junit.jupiter.api.*` directly in shared test code
 * Use AssertK for assertions
 * Use Turbine for `Flow`/`StateFlow` testing
 * Use `kotlinx-coroutines-test` with `UnconfinedTestDispatcher` for coroutine testing
@@ -207,7 +208,7 @@ class GetUserProfileUseCase(
 
 ## Test SUT rules
 
-* Place the `lateinit var` SUT property immediately before `@BeforeEach`
+* Place the `lateinit var` SUT property immediately before `@BeforeTest`
 * Simplify SUT names
 
     * `FooUseCase` becomes `useCase`
@@ -215,11 +216,11 @@ class GetUserProfileUseCase(
 
 ## Test setup rules
 
-* Every test class that needs shared fixtures (dispatchers, fakes, SUT) must have `@BeforeEach`
-* Use `@BeforeEach` to set the test dispatcher (e.g. `Dispatchers.setMain(UnconfinedTestDispatcher())`) and construct fakes and the SUT
-* Use `@AfterEach` to reset dispatchers (e.g. `Dispatchers.resetMain()`) when `@BeforeEach` sets them
-* Keep `@BeforeEach` minimal
-* Do not add test-specific stubbing in `@BeforeEach`
+* Every test class that needs shared fixtures (dispatchers, fakes, SUT) must have `@BeforeTest`
+* Use `@BeforeTest` to set the test dispatcher (e.g. `Dispatchers.setMain(UnconfinedTestDispatcher())`) and construct fakes and the SUT
+* Use `@AfterTest` to reset dispatchers (e.g. `Dispatchers.resetMain()`) when `@BeforeTest` sets them
+* Keep `@BeforeTest` minimal
+* Do not add test-specific stubbing in `@BeforeTest`
 * Do not add a blank line between the first fake setup line and SUT creation
 
 ## Fakes and interaction verification
@@ -277,7 +278,7 @@ When generating tests:
 
 * Follow all the testing rules in this document strictly
 * Preserve the exact blank-line structure required by the tests
-* Use JUnit5, AssertK, and Turbine consistently
+* Use `kotlin.test`, AssertK, and Turbine consistently
 * Keep tests deterministic and easy to read
 
 ## When unsure
