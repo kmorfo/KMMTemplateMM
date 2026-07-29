@@ -1,38 +1,37 @@
 [versions]
-agp = "9.2.1"
+agp = "9.3.1"
 adaptive = "1.2.0"
-androidTools = "32.2.0"
+androidTools = "32.3.1"
 androidx-activityCompose = "1.13.0"
 androidx-appcompat = "1.7.1"
 androidx-constraintlayout = "2.2.1"
-androidx-core-ktx = "1.18.0"
+androidx-core-ktx = "1.19.0"
 androidx-espresso-core = "3.7.0"
 androidx-lifecycle = "2.10.0"
-androidx-material = "1.13.0"
+androidx-material = "1.14.0"
 androidx-sqliteBundled = "2.6.2"
 androidx-test-junit = "1.3.0"
 assertk = "0.28.1"
-buildkonfig = "0.21.0"
+buildkonfig = "0.22.0"
 coil = "3.4.0"
 coil-network = "3.4.0"
-composeHotReload = "1.1.0"
+composeHotReload = "1.2.0"
 composeMultiplatform = "1.10.3"
 core-splashscreen = "1.2.0"
-coroutines = "1.10.2"
+coroutines = "1.11.0"
 datastore = "1.2.1"
 desugar_jdk_libs = "2.1.5"
 jetbrains-core-bundle = "1.0.1"
-jetbrainsKotlinJvm = "2.3.21"
+jetbrainsKotlinJvm = "2.4.10"
 junit = "4.13.2"
-junitJupiter = "5.14.4"
-junitPlatform = "1.14.4"
-koin = "4.2.1"
-kotlin = "2.3.21"
-kotlinxDatetime = "0.7.1"
+junitJupiter = "6.1.2"
+koin = "4.2.2"
+kotlin = "2.4.10"
+kotlinxDatetime = "0.8.0"
 ksp = "2.3.5"
 ktlint = "14.2.0"
-ktor = "3.4.3"
-ktorClientLogging = "3.4.3"
+ktor = "3.5.1"
+ktorClientLogging = "3.5.1"
 ktorServerCallLogging = "3.0.0"
 material-icons = "1.7.3"
 material3 = "1.10.0-alpha05"
@@ -53,9 +52,9 @@ cmpNavigation3 = "1.0.0-alpha06"
 
 # Project versions
 projectApplicationId = "es.rlujancreations.mmkmptemplate"
-projectCompileSdkVersion = "36"
+projectCompileSdkVersion = "37"
 projectMinSdkVersion = "26"
-projectTargetSdkVersion = "36"
+projectTargetSdkVersion = "37"
 projectVersionCode = "1"
 projectVersionName = "1.0.0"
 
@@ -182,7 +181,7 @@ androidx-test-runner = { group = "androidx.test", name = "runner", version.ref =
 assertk = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assertk" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junitJupiter" }
-junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junitPlatform" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junitJupiter" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 [plugins]

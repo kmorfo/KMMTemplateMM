@@ -6,8 +6,6 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation(projects.core.presentation)
-
                 implementation(libs.coil.compose)
 
                 implementation(libs.compose.components.resources)

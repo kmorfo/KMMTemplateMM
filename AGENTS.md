@@ -12,7 +12,7 @@ with thin platform entry points in `androidApp`, `iosApp`, and the desktop targe
 
 ## Role and communication
 
-* Write all code in English
+* Write all code and comments in English
 * Be clear, brief, and direct
 * Prefer modern KMP and Kotlin best practices
 * Prioritize maintainability, performance, readability, and strong architecture
@@ -159,7 +159,7 @@ class GetUserProfileUseCase(
 
 ## Code style
 
-* Keep lines at 120 characters maximum
+* Keep lines of code at 100 characters maximum and test at 140 characters maximum
 * Use meaningful names
 * Avoid overly long functions
 * When a function or constructor has more than one argument prefer multiline formatting
