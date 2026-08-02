@@ -11,15 +11,11 @@ object KmpSourceSets {
     const val ANDROID_HOST_TEST_IMPLEMENTATION = "androidHostTestImplementation"
     const val ANDROID_HOST_TEST_RUNTIME_ONLY = "androidHostTestRuntimeOnly"
 
-    const val DESKTOP_TEST_IMPLEMENTATION = "desktopTestImplementation"
-    const val DESKTOP_TEST_RUNTIME_ONLY = "desktopTestRuntimeOnly"
-
     const val KSP_ANDROID = "kspAndroid"
     const val KSP_IOS_MAIN = "iosMain"
     const val KSP_IOS_SIMULATOR_ARM64 = "kspIosSimulatorArm64"
     const val KSP_IOS_ARM64 = "kspIosArm64"
     const val KSP_IOS_X64 = "kspIosX64"
-    const val KSP_DESKTOP = "kspDesktop"
 }
 
 object AndroidConfigurations {

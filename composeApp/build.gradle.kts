@@ -1,5 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-
 plugins {
     alias(libs.plugins.convention.cmp.application)
     alias(libs.plugins.convention.koin)
@@ -49,22 +47,6 @@ kotlin {
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
-        }
-        desktopMain.dependencies {
-            implementation(compose.desktop.currentOs)
-            implementation(libs.kotlinx.coroutines.swing)
-        }
-    }
-}
-
-compose.desktop {
-    application {
-        mainClass = "es.rlujancreations.mmkmptemplate.MainKt"
-
-        nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "es.rlujancreations.mmkmptemplate"
-            packageVersion = "1.0.0"
         }
     }
 }

@@ -7,7 +7,6 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 internal fun Project.configureKotlinMultiplatform() {
     configureAndroidLibraryTarget()
-    configureDesktopTarget()
 
     extensions.configure<KotlinMultiplatformExtension> {
         extensions.configure<KotlinMultiplatformAndroidLibraryExtension> {

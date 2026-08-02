@@ -20,11 +20,6 @@ kotlin {
             dependsOn(commonMain.get())
         }
 
-        desktopMain {
-            dependsOn(jvmCommonMain)
-            dependencies {}
-        }
-
         androidMain {
             dependsOn(jvmCommonMain)
             dependencies {}

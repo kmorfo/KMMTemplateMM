@@ -43,10 +43,6 @@ class TestUnitConventionPlugin : Plugin<Project> {
                 add(KmpSourceSets.ANDROID_HOST_TEST_IMPLEMENTATION, kotlinTestJunit5)
                 add(KmpSourceSets.ANDROID_HOST_TEST_IMPLEMENTATION, junitJupiterEngine)
                 add(KmpSourceSets.ANDROID_HOST_TEST_RUNTIME_ONLY, junitPlatformLauncher)
-
-                add(KmpSourceSets.DESKTOP_TEST_IMPLEMENTATION, kotlinTestJunit5)
-                add(KmpSourceSets.DESKTOP_TEST_IMPLEMENTATION, junitJupiterEngine)
-                add(KmpSourceSets.DESKTOP_TEST_RUNTIME_ONLY, junitPlatformLauncher)
             }
 
             tasks.withType<Test>().configureEach {

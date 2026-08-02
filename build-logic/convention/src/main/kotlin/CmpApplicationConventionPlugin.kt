@@ -2,7 +2,6 @@
 import es.rlujancreations.convention.KmpSourceSets
 import es.rlujancreations.convention.applyHierarchyTemplate
 import es.rlujancreations.convention.configureAndroidLibraryTarget
-import es.rlujancreations.convention.configureDesktopTarget
 import es.rlujancreations.convention.configureIosTargets
 import es.rlujancreations.convention.libs
 import org.gradle.api.Plugin
@@ -25,7 +24,6 @@ class CmpApplicationConventionPlugin: Plugin<Project> {
 
             configureAndroidLibraryTarget()
             configureIosTargets()
-            configureDesktopTarget()
 
             extensions.configure<KotlinMultiplatformExtension> {
                 applyHierarchyTemplate()

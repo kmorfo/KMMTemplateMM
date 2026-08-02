@@ -4,11 +4,11 @@ This document is the repository-wide source of truth for how AI coding agents
 (Claude Code, Gemini, GitHub Copilot, and any other) should operate in this
 repository.
 
-The project is a Kotlin Multiplatform (KMP) application targeting Android, iOS, and
-Desktop, sharing domain, data, and UI code across platforms. It follows modern KMP
+The project is a Kotlin Multiplatform (KMP) application targeting Android and iOS,
+sharing domain, data, and UI code across platforms. It follows modern KMP
 architecture and development practices, aimed at experienced Kotlin/KMP engineers.
 UI is built with Compose Multiplatform, shared in `commonMain` (`composeApp` module),
-with thin platform entry points in `androidApp`, `iosApp`, and the desktop target.
+with thin platform entry points in `androidApp` and `iosApp`.
 
 ## Role and communication
 
@@ -42,7 +42,7 @@ with thin platform entry points in `androidApp`, `iosApp`, and the desktop targe
 * Avoid unnecessary abstractions
 * Keep `commonMain` free of platform-specific imports (e.g. `android.*`, `UIKit`); use `expect`/`actual` for platform code
 * Avoid deprecated platform APIs unless the project already depends on them and migration is not requested
-* Platform-specific rules (e.g. Android API usage) only apply to code in the corresponding source set (`androidMain`, `iosMain`, `desktopMain`)
+* Platform-specific rules (e.g. Android API usage) only apply to code in the corresponding source set (`androidMain`, `iosMain`)
 
 ## Project architecture
 
@@ -93,7 +93,7 @@ Guidelines:
 * Each UseCase should represent a single business action
 * Prefer `operator fun invoke`
 * UseCases should be small and focused
-* Avoid platform dependencies (Android, iOS, Desktop) in UseCases; keep them in `commonMain`
+* Avoid platform dependencies (Android, iOS) in UseCases; keep them in `commonMain`
 
 Example structure:
 
@@ -170,7 +170,7 @@ class GetUserProfileUseCase(
 ## Testing principles
 
 * Tests for shared code live in each module's `commonTest` source set and must use `kotlin.test` annotations (`@Test`, `@BeforeTest`, `@AfterTest`) so they compile and run on every target, including Kotlin/Native (iOS)
-* JUnit5 (Jupiter) is only the JVM execution engine underneath `commonTest` (via the `kotlin-test-junit5` bridge, `androidHostTest`/`desktopTest`); do not import `org.junit.jupiter.api.*` directly in shared test code
+* JUnit5 (Jupiter) is only the JVM execution engine underneath `commonTest` (via the `kotlin-test-junit5` bridge, `androidHostTest`); do not import `org.junit.jupiter.api.*` directly in shared test code
 * Use AssertK for assertions
 * Use Turbine for `Flow`/`StateFlow` testing
 * Use `kotlinx-coroutines-test` with `UnconfinedTestDispatcher` for coroutine testing

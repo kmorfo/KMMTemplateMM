@@ -39,7 +39,6 @@ class RoomConventionPlugin : Plugin<Project> {
                 add(KmpSourceSets.KSP_IOS_SIMULATOR_ARM64, roomCompiler)
                 add(KmpSourceSets.KSP_IOS_ARM64, roomCompiler)
                 add(KmpSourceSets.KSP_IOS_X64, roomCompiler)
-                add(KmpSourceSets.KSP_DESKTOP, roomCompiler)
             }
         }
     }
